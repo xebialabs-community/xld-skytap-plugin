@@ -1,4 +1,4 @@
-# XL Deploy|Release Description|Interface plugin v1.0.0
+# XL Deploy Skytap Plugin v1.0.1
 
 [![Build Status][xld-skytap-plugin-travis-image]][xld-skytap-plugin-travis-url]
 [![License: MIT][xld-skytap-plugin-license-image]][xld-skytap-plugin-license-url]
