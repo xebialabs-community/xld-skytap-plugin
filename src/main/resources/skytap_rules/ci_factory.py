@@ -95,6 +95,7 @@ class CIFactory(object):
             if type(val) is list:
                 if prop in ['members']:
                     for listVal in val:
+                        print("Adding member container %s to %s" % (listVal["ci ref"], ci_info['id'] ))
                         sub_ci_obj = self.repositoryService.read(listVal["ci ref"])
                         ci_obj.addMember(sub_ci_obj)
             else:

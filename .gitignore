@@ -1,0 +1,11 @@
+.gradle
+build
+temp
+supervisord.*
+.vscode
+.idea
+.classpath
+.project
+.settings/
+bin/
+*.pyc

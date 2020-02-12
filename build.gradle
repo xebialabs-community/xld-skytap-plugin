@@ -68,6 +68,7 @@ test {
  
 
 task integrationTest(type: Test, dependsOn: ['build']) {
+    // NOTE: NOT IMPLEMENTED YET
     // do not automatically scan for tests
     scanForTestClasses = false 
     // explicitly include the integration test
