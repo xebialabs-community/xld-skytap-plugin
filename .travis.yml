@@ -6,9 +6,10 @@ deploy:
   provider: releases
   api_key:
     secure: tsYXeTbKL6pIbIUhnET0pjJQeviGPsv6Sk/mu9cMH0TuJPjqGBnv26eH9aaEQqctG8IoO1VYa34YlPo4oY19wWhLk/ATurfLhh20jPHw1fO+Ba4jv+COYJ99HXVF27n9bN9S+k0ULMhaJl5gdr1ptyktDQMZaNjRjgwPgWcCWA4CAyPFLVhJh9gITtoiBP1GiYqUCfPvnfv62hYVjYffmfCL6X3f84sX6VsO2RHaNo3QOnUN7RP9frJcTOmF3EdWSIPdxkLRx1TwaEdSbBYDB/dXVsUMqGGC+H9fAXyYnBNlws701wmTCJFQu2rf9e8Li5dyOxk5Zw2oeO2G/sQ0S/5tpoLIv5qX3rTw+5r4lXzTxzwgXN7dfwOL4IQdbtqJwpfKYZZUml7KDPhH29ngrE9w3k0lowlvtG9f0MDgMtEIfStyCf5V/IP6KF9mDCPTGCZDrZOLEbqoSDcaEDBNN6vKd3dgleADuHxgdskMPu9syce0Er3mk6oR/3GQy6Rw37KNyianXP3hEfkGFnEHRGcqYDXj0hWuMC5azZN0yPbmTlTGqGE8T0+VogIGfq0SdLls66QTXIbkANm6p+T8lZMgLFqJEjQtRQ9WjH3py6kgJmzezWtaZqyfoYlkdp92RB2jJdX81kxhgeNeN1ILGEZRyC2w1be7DHHEP00VVpU=
+  file_glob: true
   file: build/distributions/*
   skip_cleanup: true
   on:
     all_branches: true
     tags: true
-    repo: xebialabs-community/xld-skytab-plugin
+    repo: xebialabs-community/xld-skytap-plugin

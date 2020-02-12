@@ -19,6 +19,14 @@ apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'maven'
 
+if (!project.hasProperty('release.scope')) {
+  project.ext['release.scope'] = 'patch'
+}
+
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
+
 repositories {
   mavenLocal()
   mavenCentral()
@@ -46,14 +54,6 @@ version = "1.0.1"
 
 // sourceCompatibility = 1.7
 // targetCompatibility = 1.7
-
-if (!project.hasProperty('release.scope')) {
-  project.ext['release.scope'] = 'patch'
-}
-
-if (!project.hasProperty('release.useLastTag')) {
-  project.ext['release.useLastTag'] = true
-}
 
 processResources.configure {
   filesNotMatching('**/*.png') {
