@@ -36,7 +36,7 @@ dependencies {
 }
 
 
-version = "1.0.1"
+//version = "1.0.1"
 
 // sourceCompatibility = 1.7
 // targetCompatibility = 1.7
@@ -56,33 +56,6 @@ processResources.configure {
       'project.name'   : rootProject.name
     ]
   }
-}
-
-test {
-    // Auto detected Unit tests only, exclude the end to end integration test
-    exclude '**/*IntegrationTest.class'
-    
-    // show standard out and standard error of the test JVM(s) on the console
-    testLogging.showStandardStreams = true
-}
- 
-
-task integrationTest(type: Test, dependsOn: ['build']) {
-    // NOTE: NOT IMPLEMENTED YET
-    // do not automatically scan for tests
-    scanForTestClasses = false 
-    // explicitly include the integration test
-    include '**/*IntegrationTest.class'
-    // To run tests - 
-    // 1. Docker  and Docker Compose must be installed 
-    // 2. The XL-Release image expects to find a valid XL-Release license here: ~/xl-licenses/xl-release-license.lic
-    // 3. To run the test - ./gradlew clean integrationTest
-    //   The test will set up a temporary xlr/mockserver testbed using docker. The mockserver
-    //   will serve up the property or yaml files
-    // After testing is complete, the test docker containers are stopped and removed. 
-
-    // show standard out and standard error of the test JVM(s) on the console
-    testLogging.showStandardStreams = true
 }
 
 license {
