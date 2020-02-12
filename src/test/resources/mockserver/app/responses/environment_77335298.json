@@ -1,0 +1,131 @@
+{
+    "id": "77335298",
+    "url": "https://cloud.skytap.com/configurations/77335298",
+    "name": "Empty Linux Image 5GB - My Copy",
+    "error": "",
+    "runstate": "running",
+    "rate_limited": false,
+    "description": "An empty 5GB disk for installing Linux.",
+    "suspend_on_idle": null,
+    "suspend_at_time": null,
+    "routable": false,
+    "prefer_local_routing": false,
+    "vms": [
+        {
+            "id": "62435897",
+            "name": "Empty Linux Image 5GB",
+            "runstate": "running",
+            "rate_limited": false,
+            "hardware": {
+                "cpus": 1,
+                "supports_multicore": true,
+                "cpus_per_socket": 1,
+                "ram": 1024,
+                "svms": 1,
+                "guestOS": "centos-64",
+                "max_cpus": 24,
+                "min_ram": 256,
+                "max_ram": 524288,
+                "vnc_keymap": null,
+                "uuid": null,
+                "disks": [
+                    {
+                        "id": "disk-38499643-63723811-scsi-0-0",
+                        "size": 5120,
+                        "type": "SCSI",
+                        "controller": "0",
+                        "lun": "0"
+                    }
+                ],
+                "storage": 5120,
+                "upgradable": false,
+                "time_sync_enabled": true,
+                "rtc_start_time": null,
+                "copy_paste_enabled": true,
+                "nested_virtualization": false,
+                "architecture": "x86",
+                "boot_option": "bios"
+            },
+            "error": false,
+            "error_details": false,
+            "asset_id": null,
+            "hardware_version": 11,
+            "max_hardware_version": 11,
+            "interfaces": [
+                {
+                    "id": "nic-38499643-63723811-0",
+                    "ip": "10.0.0.1",
+                    "hostname": "host-1",
+                    "mac": "00:50:56:12:0B:9B",
+                    "services_count": 0,
+                    "services": [],
+                    "public_ips_count": 0,
+                    "public_ips": [],
+                    "vm_id": "62435897",
+                    "vm_name": "Empty Linux Image 5GB",
+                    "status": "Busy",
+                    "network_id": "44479821",
+                    "network_name": "Default Network",
+                    "network_url": "https://cloud.skytap.com/configurations/77335298/networks/44479821",
+                    "network_type": "automatic",
+                    "network_subnet": "10.0.0.0/24",
+                    "nic_type": "vmxnet3",
+                    "secondary_ips": [],
+                    "public_ip_attachments": []
+                }
+            ],
+            "notes": [
+                {
+                    "id": "7296783",
+                    "user_id": 469829,
+                    "time": "2020/02/04 10:52:38 -0800",
+                    "text": "{\"Metadata\":{\"XLD::VariableMappings\":{\"Address\":\"interfaces_0_ip\"},\"XLD::Infrastructure\":[{\"id\":\"cloud\",\"type\":\"core.Directory\"},{\"id\":\"cloud/webserver\",\"type\":\"overthere.SmbHost\",\"os\":\"WINDOWS\",\"connectionType\":\"WINRM_INTERNAL\",\"address\":\"{Address}\",\"port\":\"5985\",\"username\":\"{{username}}\",\"password\":\"{{my.password}}\"},{\"id\":\"cloud/webserver/iis\",\"type\":\"iis.Server\"}],\"XLD::Environments\":[{\"id\":\"cloud-dev\",\"type\":\"udm.Environment\",\"members\":[{\"ci ref\":\"Infrastructure/cloud/webserver/iis\"}]}]}}"
+                }
+            ],
+            "labels": [],
+            "credentials": [],
+            "license_types": [],
+            "desktop_resizable": true,
+            "local_mouse_cursor": true,
+            "maintenance_lock_engaged": false,
+            "region_backend": "skytap",
+            "created_at": "2020/02/04 11:39:42 -0800",
+            "supports_suspend": true,
+            "can_change_object_state": true,
+            "containers": null,
+            "licenses": [],
+            "configuration_url": "https://cloud.skytap.com/configurations/77335298"
+        }
+    ],
+    "networks": [
+        {
+            "id": "44479821",
+            "url": "https://cloud.skytap.com/configurations/77335298/networks/44479821",
+            "name": "Default Network",
+            "network_type": "automatic",
+            "subnet": "10.0.0.0/24",
+            "subnet_addr": "10.0.0.0",
+            "subnet_size": 24,
+            "gateway": "10.0.0.254",
+            "primary_nameserver": null,
+            "secondary_nameserver": null,
+            "region": "US-Central",
+            "domain": "skytap.example",
+            "vpn_attachments": [],
+            "tunnelable": false,
+            "tunnels": []
+        }
+    ],
+    "lockversion": "bf09cce3363304ad339156beefe8307e7d7c0b30",
+    "use_smart_client": true,
+    "disable_internet": false,
+    "region": "US-Central",
+    "region_backend": "skytap",
+    "owner": "https://cloud.skytap.com/users/469829",
+    "platform_errors": [],
+    "publish_sets": [],
+    "shutdown_on_idle": null,
+    "shutdown_at_time": null,
+    "containers_count": 0,
+    "container_hosts_count": 0
+}

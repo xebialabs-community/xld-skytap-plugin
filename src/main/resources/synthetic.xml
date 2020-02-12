@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2020 XEBIALABS
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd"
+           xmlns="http://www.xebialabs.com/deployit/synthetic">
+
+    <!-- Skytap Configuration -->
+    <type type="skytap.Server" extends="udm.BaseContainer" root="INFRASTRUCTURE">
+        <property name="url" label="Skytap REST API URL" required="true" description="Skytap API URL."/>
+        <property name="username" label="Username" required="true"
+                  description="Username for authentication on Skytap."/>
+        <property name="password" label="Password" required="true" password="true"
+                  description="Password or API Security Token for authentication on Skytap."/>
+        <property name="enableSslVerification" label="SSL Verification" required="false" default="true" kind="boolean"
+                  description="Enable SSL Verification"/>
+        
+        <method name="checkConnection" label="Check Connection" delegate="jythonScript" script="skytap/check_connection.py"/>
+    </type>
+
+    <!-- Support provisioning an environment -->
+    <type type="skytap.Environment" extends="udm.BaseProvisioned" deployable-type="skytap.EnvironmentSpec"
+          container-type="skytap.Server" description="Skytap environment provisioning.">
+        <generate-deployable type="skytap.EnvironmentSpec" extends="udm.BaseProvisionable" copy-default-values="true"
+                             description="Specification for an environment provisioning."/>
+        <property name="template_id" label="Template ID" required="true"
+                  description="ID of the template to create the environment from."/>
+        <property name="project_id" label="Project ID" required="false"
+                  description="ID of the project to add the environment to."/>
+        
+        <property name="environment_id" kind="string" label="Environment Id" required="false"
+                  description="ID of the Environment." category="Output"/>
+        <property name="public_ip" kind="string" label="Public IP Address" required="false"
+                  description="Public IP address of the instance." category="Output"/>
+        <property name="public_hostname" kind="string" label="Public Hostname" required="false"
+                  description="Public host name of the instance." category="Output"/>
+
+        <!--<property name="outputVariables" kind="map_string_string" required="false" category="Output" description="Output variables captured in deployed. Key is the alias name and value is the Skytap output property value for a given resource."/>-->
+        <property name="creationMetadata" kind="list_of_string" required="false" category="Output" 
+            description="This is a list of all the Metadata retrieved from the Skytap environment that was used to create infrastructure for this provisioning application"/>
+
+    </type>
+
+</synthetic>
